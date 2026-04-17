@@ -1,8 +1,3 @@
--- =============================================
--- Author:		Denis Finokhin
--- Create date: 03.02.2026
--- Description:	Обработать контрагента из 1С
--- =============================================
 ALTER PROCEDURE [dbo].[1C_ExportContragentV2]	
 	@id INT = NULL,
 	@xml XML =NULL,
@@ -124,9 +119,12 @@ BEGIN
 				c.Country = s.CountryID
 			FROM Contragents c
 			INNER JOIN @SyncTbl s ON s.contrgentID =@Contragent			
-			WHERE  c.id=@Contragent AND (
-			c.FullName <>s.NameFull OR c.ID_1C<>s.[1cID] OR c.LAddress<>s.AdressLegal OR (s.Currency<>c.CurrencyID)
-			 OR isnull(c.Country,0)<>isnull(s.CountryID,0))
+			WHERE  c.id=@Contragent
+			AND EXISTS (
+			SELECT c.FullName,c.LAddress,c.CurrencyID,c.Country,ISNULL(c.ID_1C, '00000000-0000-0000-0000-000000000000')
+			EXCEPT
+			SELECT s.NameFull,s.AdressLegal,s.Currency,s.CountryID,s.[1cID]
+			)			
 			print 'обновил контрагента'
 		END
 		ELSE
