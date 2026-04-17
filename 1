@@ -8,7 +8,7 @@
           <QueryPlan DegreeOfParallelism="1" CachedPlanSize="32" CompileTime="3" CompileCPU="3" CompileMemory="224">
             <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0" />
             <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="838847" EstimatedPagesCached="209711" EstimatedAvailableDegreeOfParallelism="2" MaxCompileMemory="13516712" />
-            <QueryTimeStats CpuTime="0" ElapsedTime="0" />
+            <QueryTimeStats CpuTime="1" ElapsedTime="1" />
             <RelOp AvgRowSize="9" EstimateCPU="2E-06" EstimateIO="0.02" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Delete" NodeId="0" Parallel="false" PhysicalOp="Clustered Index Delete" EstimatedTotalSubtreeCost="0.0232857">
               <OutputList />
               <RunTimeInformation>
@@ -139,7 +139,7 @@
             <WaitStats>
               <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="12" WaitCount="9" />
             </WaitStats>
-            <QueryTimeStats CpuTime="4" ElapsedTime="16" />
+            <QueryTimeStats CpuTime="3" ElapsedTime="15" />
             <RelOp AvgRowSize="9" EstimateCPU="1E-06" EstimateIO="0.01" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Insert" NodeId="0" Parallel="false" PhysicalOp="Table Insert" EstimatedTotalSubtreeCost="0.240749">
               <OutputList />
               <RunTimeInformation>
@@ -1854,13 +1854,13 @@
               <StatisticsInfo Database="[OilTrader]" Schema="[dbo]" Table="[ContragentOldNames]" Statistics="[_WA_Sys_00000003_5E8AD4CA]" ModificationCount="0" SamplingPercent="100" LastUpdate="2026-04-15T02:28:32.85" />
             </OptimizerStatsUsage>
             <WaitStats>
-              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="659" WaitCount="4" />
+              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="771" WaitCount="3" />
             </WaitStats>
-            <QueryTimeStats CpuTime="2" ElapsedTime="662" />
+            <QueryTimeStats CpuTime="3" ElapsedTime="775" />
             <RelOp AvgRowSize="9" EstimateCPU="0.000546953" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1139.49" LogicalOp="Assert" NodeId="1" Parallel="false" PhysicalOp="Assert" EstimatedTotalSubtreeCost="1.5937">
               <OutputList />
               <RunTimeInformation>
-                <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="0" ActualCPUms="0" />
+                <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="1" ActualCPUms="1" />
               </RunTimeInformation>
               <Assert StartupExpression="false">
                 <RelOp AvgRowSize="9" EstimateCPU="0.0105166" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1139.49" LogicalOp="Left Semi Join" NodeId="2" Parallel="false" PhysicalOp="Merge Join" EstimatedTotalSubtreeCost="1.59316">
@@ -1868,7 +1868,7 @@
                     <ColumnReference Column="Expr1017" />
                   </OutputList>
                   <RunTimeInformation>
-                    <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="0" ActualCPUms="0" ActualScans="0" ActualLogicalReads="0" ActualPhysicalReads="0" ActualReadAheads="0" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobReadAheads="0" />
+                    <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="1" ActualCPUms="1" ActualScans="0" ActualLogicalReads="0" ActualPhysicalReads="0" ActualReadAheads="0" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobReadAheads="0" />
                   </RunTimeInformation>
                   <Merge ManyToMany="false">
                     <InnerSideJoinColumns>
@@ -1898,7 +1898,7 @@
                         <ColumnReference Database="[OilTrader]" Schema="[dbo]" Table="[ContragentOldNames]" Column="Contragent" />
                       </OutputList>
                       <RunTimeInformation>
-                        <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="0" ActualCPUms="0" ActualScans="0" ActualLogicalReads="0" ActualPhysicalReads="0" ActualReadAheads="0" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobReadAheads="0" />
+                        <RunTimeCountersPerThread Thread="0" ActualRows="0" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="1" ActualCPUms="1" ActualScans="0" ActualLogicalReads="0" ActualPhysicalReads="0" ActualReadAheads="0" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobReadAheads="0" />
                       </RunTimeInformation>
                       <Update DMLRequestSort="true">
                         <Object Database="[OilTrader]" Schema="[dbo]" Table="[ContragentOldNames]" Index="[IX_ContragentOldNames_Code]" IndexKind="NonClustered" Storage="RowStore" />
@@ -2829,9 +2829,9 @@
               <StatisticsInfo Database="[OilTrader]" Schema="[dbo]" Table="[Contragents]" Statistics="[_WA_Sys_00000035_51EF2864]" ModificationCount="1" SamplingPercent="100" LastUpdate="2026-04-15T02:28:33.46" />
             </OptimizerStatsUsage>
             <WaitStats>
-              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="62" WaitCount="8" />
+              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="344" WaitCount="9" />
             </WaitStats>
-            <QueryTimeStats CpuTime="1" ElapsedTime="63" />
+            <QueryTimeStats CpuTime="3" ElapsedTime="347" />
             <RelOp AvgRowSize="9" EstimateCPU="1.21325E-06" EstimateIO="0.01" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1.21325" LogicalOp="Update" NodeId="1" Parallel="false" PhysicalOp="Index Update" EstimatedTotalSubtreeCost="0.240637">
               <OutputList />
               <RunTimeInformation>
@@ -4706,9 +4706,9 @@
             <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0" />
             <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="838847" EstimatedPagesCached="209711" EstimatedAvailableDegreeOfParallelism="2" MaxCompileMemory="13519192" />
             <WaitStats>
-              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="207" WaitCount="1" />
+              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="358" WaitCount="1" />
             </WaitStats>
-            <QueryTimeStats CpuTime="0" ElapsedTime="208" />
+            <QueryTimeStats CpuTime="1" ElapsedTime="360" />
             <RelOp AvgRowSize="27" EstimateCPU="1E-07" EstimateIO="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Compute Scalar" NodeId="0" Parallel="false" PhysicalOp="Compute Scalar" EstimatedTotalSubtreeCost="0.0032832">
               <OutputList>
                 <ColumnReference Column="Expr1002" />
@@ -4781,9 +4781,9 @@
               <StatisticsInfo Database="[OilTrader]" Schema="[dbo]" Table="[Contacts]" Statistics="[_WA_Sys_0000002A_467D75B8]" ModificationCount="0" SamplingPercent="100" LastUpdate="2026-04-15T02:28:32.22" />
             </OptimizerStatsUsage>
             <WaitStats>
-              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="492" WaitCount="1" />
+              <Wait WaitType="ASYNC_NETWORK_IO" WaitTimeMs="617" WaitCount="2" />
             </WaitStats>
-            <QueryTimeStats CpuTime="1" ElapsedTime="494" />
+            <QueryTimeStats CpuTime="2" ElapsedTime="619" />
             <RelOp AvgRowSize="9" EstimateCPU="3E-06" EstimateIO="0.030386" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row" EstimateRows="1" LogicalOp="Insert" NodeId="0" Parallel="false" PhysicalOp="Clustered Index Insert" EstimatedTotalSubtreeCost="0.0521527">
               <OutputList />
               <RunTimeInformation>
